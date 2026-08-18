@@ -1,6 +1,8 @@
 # Enterprise AI Agent Platform
 
-企業級「RAG + Agent」平台——一個可以直接跑喺自己 Mac / 公司伺服器嘅 AI 知識庫問答系統。支援**多 LLM 供應商**（DeepSeek / OpenAI / 本地 Ollama）、**檢索增強生成（RAG）**、文件向量索引、企業級設計（分層架構、Docker、CI、測試、API Key 認證、結構化日誌）。
+> 企業級「RAG + Agent」平台——一個可以直接跑喺自己 Mac / 公司伺服器嘅 AI 知識庫問答系統。支援**多 LLM 供應商**（DeepSeek / OpenAI / 本地 Ollama）、**檢索增強生成（RAG）**、文件向量索引、企業級設計（分層架構、Docker、CI、測試、API Key 認證、結構化日誌）。
+
+**🌐 Language:** 中文 | [English](README_EN.md)
 
 ![系統架構](docs/architecture.png)
 

@@ -4,6 +4,13 @@
 
 **🌐 Language:** 中文 | [English](README_EN.md)
 
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Python](https://img.shields.io/badge/python-3.10+-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-white)
+![Docker](https://img.shields.io/badge/Docker-ready-blue)
+![CI](https://img.shields.io/badge/CI-GitHub%20Actions-green)
+![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen)
+
 ![系統架構](docs/architecture.png)
 
 ---
@@ -95,9 +102,9 @@ curl -X POST http://localhost:8000/api/v1/query \
   └───────────────┘        └───────────────┘         └────────────────┘
          │                         │                          │
          ▼                         ▼                          ▼
-  ┌───────────────────────────────────────────────────────┐
-  │              SQLite (documents + chunks + FTS5)       │
-  └───────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────┐
+│              SQLite (documents + chunks + FTS5)       │
+└───────────────────────────────────────────────────────┘
 ```
 
 **設計原則**：分層清晰（Router → Service → Repository），每層獨立可測試；所有外部依賴（LLM）都透過抽象介面，換供應商唔使改核心邏輯。
@@ -211,6 +218,12 @@ A：需要 `sentence-transformers`（會下載模型）。開啟後同時用 FTS
 
 ---
 
-## 授權
+## 🤝 貢獻
 
-MIT License
+歡迎 PR！詳見 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+---
+
+## 📄 License
+
+MIT License。

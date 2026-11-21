@@ -163,6 +163,16 @@ enterprise-ai-agent/
 
 ---
 
+## 更多文件
+
+| 文件 | 內容 |
+|------|------|
+| [docs/architecture-deep-dive.md](docs/architecture-deep-dive.md) | 架構深度解析：資料流、LLM Provider 抽象、Agent 工具循環、擴展指南 |
+| [docs/deployment-guide.md](docs/deployment-guide.md) | 生產部署：Docker、systemd、Nginx 反向代理、安全檢查清單、備份 |
+| [docs/api-reference.md](docs/api-reference.md) | API 參考：/ingest、/query、/health、OpenAPI 文件 |
+
+---
+
 ## 測試
 
 ```bash

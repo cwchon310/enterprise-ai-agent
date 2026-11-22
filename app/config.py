@@ -46,7 +46,7 @@ class Settings(BaseSettings):
     chunk_overlap: int = 200
 
     # Server
-    cors_origins: str = "*"
+    cors_origins: str = "http://localhost:3000,http://localhost:8000"
     log_level: str = "INFO"
 
 

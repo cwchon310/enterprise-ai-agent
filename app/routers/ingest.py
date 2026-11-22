@@ -18,6 +18,9 @@ def get_store(settings: Settings = Depends(get_settings)) -> DocumentStore:
     return app_state.store
 
 
+MAX_UPLOAD_BYTES = 50 * 1024 * 1024  # 50 MB
+
+
 @router.post("", response_model=IngestResponse, status_code=201)
 async def ingest_document(
     file: UploadFile,
@@ -27,6 +30,20 @@ async def ingest_document(
 ) -> IngestResponse:
     if not file.filename:
         raise HTTPException(status_code=400, detail="Missing filename")
+
+    # Guard against oversized uploads before reading into memory.
+    size = 0
+    while True:
+        piece = file.file.read(1024 * 1024)
+        if not piece:
+            break
+        size += len(piece)
+        if size > MAX_UPLOAD_BYTES:
+            raise HTTPException(
+                status_code=413,
+                detail=f"File too large (>{MAX_UPLOAD_BYTES // 1024 // 1024} MB)",
+            )
+    file.file.seek(0)
 
     try:
         raw = extract_text(file.filename, file.file)

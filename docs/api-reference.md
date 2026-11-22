@@ -23,8 +23,9 @@ namespace: <String> # 必需，命名空間，用於隔離不同資料
 
 ```json
 {
-  "status": "ok",
-  "chunks_indexed": 42,
+  "document_id": 42,
+  "filename": "manual.txt",
+  "chunks": 5,
   "namespace": "support"
 }
 ```

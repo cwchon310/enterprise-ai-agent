@@ -70,8 +70,8 @@ def chunk_text(text: str, chunk_size: int, overlap: int) -> list[str]:
 
 def ingest_file(
     filename: str, stream: BinaryIO, settings: Settings
-) -> tuple[int, list[str]]:
-    """Full pipeline: extract -> clean -> chunk. Returns (doc_id, chunks)."""
+) -> tuple[str, list[str]]:
+    """Full pipeline: extract -> clean -> chunk. Returns (cleaned_text, chunks)."""
     raw = extract_text(filename, stream)
     cleaned = clean_text(raw)
     if not cleaned:
